@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>HTML 5 canvas experiment</title>
+	
+	<!-- Meta -->
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.1.0/build/cssreset/reset-min.css">
+	<link rel="stylesheet" type="text/css" href="_css/main.css">
+
+	<!-- JS -->
+	<script type="text/javascript" src="http://yui.yahooapis.com/combo?3.1.0/build/yui/yui-min.js"></script>
+
+</head>
+
+<body>
+
+	<div id="canvasWrapper">
+	
+		<script type="text/javascript">
+			YUI({
+		        modules: {
+		            'canvas': {
+		                fullpath: '_js/canvas.js',
+		                requires: ['widget', 'io-base', 'profiler', 'async-queue']
+		            }
+		        }
+		    }).use('widget', 'io-base', 'profiler', 'async-queue', 'canvas', function(Y) {
+		        var canvas = new Y.TwoAndaHalfPeople.Canvas({
+					spotlightRadius: 150,
+					ambientDarkness: 0.8,
+					canvasWidth: 1000,
+					canvasHeight: 400,
+					backgroundImgSrc: '_img/Bricks.jpg',
+					foregroundImgSrc: '_img/y.png'
+				});
+		        canvas.render('#canvasWrapper');
+		    });
+
+		</script>
+	
+	</div>
+
+
+</body>
+
+</html>
